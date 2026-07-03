@@ -1,9 +1,8 @@
 package com.course.demo.course.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
-
 import java.util.UUID;
+import lombok.*;
 
 @Entity
 @Table(name = "user")
@@ -15,13 +14,13 @@ import java.util.UUID;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @EqualsAndHashCode.Include
-    private UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  @EqualsAndHashCode.Include
+  private UUID id;
 
-    private String firstName;
-    private String lastName;
-    private String userName;
-    private String email;
+  private String firstName;
+  private String lastName;
+  private String userName;
+  private String email;
 }
