@@ -15,22 +15,27 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class SubscriptionEmailRequestedService implements Consumer<SubscriptionEmailRequested> {
 
-    private final Mailer mailer;
+  private final Mailer mailer;
 
-    @SneakyThrows
-    @Override
-    public void accept(SubscriptionEmailRequested event) {
-        InternetAddress recipientAddress = new InternetAddress(event.getTo());
-        String subject = "Confirmation d'inscription";
-        String htmlBody = "Bonjour " + event.getUserFirstName()
-                + ", votre inscription au cours \"" + event.getCourseTitle() + "\" est bien enregistrée.";
+  @SneakyThrows
+  @Override
+  public void accept(SubscriptionEmailRequested event) {
+    InternetAddress recipientAddress = new InternetAddress(event.getTo());
+    String subject = "Confirmation d'inscription";
+    String htmlBody =
+        "Bonjour "
+            + event.getUserFirstName()
+            + ", votre inscription au cours \""
+            + event.getCourseTitle()
+            + "\" est bien enregistrée.";
 
-        mailer.accept(new Email(
-                recipientAddress,
-                List.<InternetAddress>of(),
-                List.<InternetAddress>of(),
-                subject,
-                htmlBody,
-                List.<File>of()));
-    }
+    mailer.accept(
+        new Email(
+            recipientAddress,
+            List.<InternetAddress>of(),
+            List.<InternetAddress>of(),
+            subject,
+            htmlBody,
+            List.<File>of()));
+  }
 }

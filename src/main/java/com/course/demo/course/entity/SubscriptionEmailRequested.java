@@ -1,8 +1,7 @@
 package com.course.demo.course.entity;
 
-import java.time.Duration;
-
 import com.course.demo.endpoint.event.model.PojaEvent;
+import java.time.Duration;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,17 +12,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SubscriptionEmailRequested extends PojaEvent {
-    private String to;
-    private String userFirstName;
-    private String courseTitle;
+  private String to;
+  private String userFirstName;
+  private String courseTitle;
 
-    @Override
-    public Duration maxConsumerDuration() {
-        return Duration.ofSeconds(30);
-    }
+  @Override
+  public Duration maxConsumerDuration() {
+    return Duration.ofSeconds(30);
+  }
 
-    @Override
-    public Duration maxConsumerBackoffBetweenRetries() {
-        return Duration.ofSeconds(5);
-    }
+  @Override
+  public Duration maxConsumerBackoffBetweenRetries() {
+    return Duration.ofSeconds(5);
+  }
 }
