@@ -1,10 +1,9 @@
 package com.course.demo;
 
 import com.course.demo.db.DatabaseConfig;
+import java.sql.Connection;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.sql.Connection;
 
 @SpringBootApplication
 public class PojaApplication {
