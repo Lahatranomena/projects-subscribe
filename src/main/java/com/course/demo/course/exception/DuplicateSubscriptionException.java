@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.CONFLICT)
 public class DuplicateSubscriptionException extends RuntimeException {
-    public DuplicateSubscriptionException(String message) {
-        super(message);
-    }
+  public DuplicateSubscriptionException(String message) {
+    super(message);
+  }
 }
